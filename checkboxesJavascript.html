@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <script type = "text/javascript" lang = "javascript">
+
+            function checkscript() {
+
+                var boxesTicked = ""
+
+                for (i = document.getElementsByName('chkboxes').length - 1; i >= 0; i--) {
+                    if (document.getElementsByName('chkboxes')[i].checked) {
+                        boxesTicked = boxesTicked + document.getElementsByName('chkboxes')[i].value + "\n"
+                    }
+                }
+
+                if (boxesTicked == "") {
+                    alert ("You must select a box to continue.")
+                    return false;
+                }
+
+                else {
+                    alert (boxesTicked)
+                    return true;
+                }
+            }
+        </script>
+        <title>Javascript that validates checkboxes</title>
+    </head>
+    <body>
+        <form name = "f1" method="POST" action="step2.php" onsubmit="return checkscript()">
+            <input type="checkbox" name="chkboxes" value="1"> 1 <br>
+            <input type="checkbox" name="chkboxes" value="2"> 2 <br>
+            <input type="checkbox" name="chkboxes" value="3"> 3 <br>
+            <br>
+            <input type="submit" value="Continue to Step 2..." name="s2"></p>
+        </form>
+    </body>
+</html>
